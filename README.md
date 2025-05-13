@@ -1,3 +1,5 @@
+[![CI](https://github.com/tygourm/cli-template/actions/workflows/ci.yml/badge.svg)](https://github.com/tygourm/cli-template/actions/workflows/ci.yml)
+
 # cli-template
 
 Yet another template.

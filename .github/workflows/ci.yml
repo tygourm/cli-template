@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+      - name: Install dependencies
+        run: uv sync --frozen --group lint
+      - name: Lint with Ruff
+        run: uv run ruff check
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+      - name: Install dependencies
+        run: uv sync --frozen --group test
+      - name: Test with pytest
+        run: uv run pytest
