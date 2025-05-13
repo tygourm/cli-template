@@ -1,0 +1,46 @@
+[project]
+name = "cli-template"
+version = "0.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "typer>=0.15.3",
+    "click<8.2.0",   # Remove when Typer supports Click 8.2.0
+]
+
+[dependency-groups]
+lint = ["ruff==0.11.2"]
+test = ["pytest>=8.3.5", "pytest-cov>=6.1.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["test"]
+addopts = [
+    "-p no:cacheprovider",
+    "--cov=src",
+    "--cov-report=html",
+    "--cov-report=term",
+]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812", # missing-trailing-comma
+    "D100",   # undocumented-public-module
+    "D203",   # incorrect-blank-line-before-class
+    "D213",   # multi-line-summary-second-line
+    "INP001", # implicit-namespace-package
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*test*.py" = [
+    "PLR2004", # magic-value-comparison
+    "S101",    # assert
+]
