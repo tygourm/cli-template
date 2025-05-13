@@ -48,11 +48,30 @@ pytest
 ### CLI
 
 ```bash
+# Run CLI
 uv run src/main.py
+
+# Help
+--help
+
+# Hello command
+hello # Hello, World!
+hello tygourm # Hello, tygourm!
+
+# Goodbye command
+goodbye # Goodbye, World!
+goodbye tygourm # Goodbye, tygourm!
 ```
 
-You can use the `--help` option to see the available commands.
+### Docker
 
 ```bash
-uv run src/main.py --help
+# Build image
+docker build -t cli-template .
+
+# Run container
+docker run -it cli-template
+
+# Inspect container
+docker run -it cli-template /bin/bash
 ```
