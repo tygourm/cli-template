@@ -12,4 +12,5 @@ this project adheres to
 
 ### Added
 
+- 🚀 Add Docker
 - 🎉 Probably last commit

@@ -1,0 +1,13 @@
+.coverage
+.dockerignore
+.git/
+.github/
+.gitignore
+.venv/
+.vscode/
+CHANGELOG.md
+Dockerfile
+README.md
+RELENG.md
+htmlcov/
+__pycache__/

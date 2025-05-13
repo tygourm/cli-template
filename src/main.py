@@ -1,3 +1,4 @@
+from contextlib import suppress
 from typing import Annotated
 
 import typer
@@ -18,4 +19,14 @@ def goodbye(name: Annotated[str, typer.Argument()] = "World") -> None:
 
 
 if __name__ == "__main__":  # pragma: no cover
-    app()
+    with suppress(SystemExit):
+        app(["--help"])
+
+    while True:
+        try:
+            command: str = typer.prompt("Enter your command (Ctrl+C to exit)")
+        except typer.Abort:
+            typer.echo("\nExiting...")
+            break
+        with suppress(SystemExit):
+            app(command.split())
