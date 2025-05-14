@@ -1,4 +1,6 @@
+.cache/
 .coverage
 .venv/
 htmlcov/
+site/
 __pycache__/

@@ -1,3 +1,4 @@
+.cache/
 .coverage
 .dockerignore
 .git/
@@ -9,5 +10,9 @@ CHANGELOG.md
 Dockerfile
 README.md
 RELENG.md
+docs/
 htmlcov/
+mkdocs.yml
+site/
 __pycache__/
+test/

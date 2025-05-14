@@ -1,0 +1,72 @@
+site_name: cli-template
+site_url: http://127.0.0.1:8000
+site_description: Yet another template.
+
+repo_name: tygourm/cli-template
+repo_url: https://github.com/tygourm/cli-template
+
+theme:
+  name: material
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
+  icon:
+    repo: fontawesome/brands/github
+  logo: img/terminal-solid.svg
+  favicon: img/terminal-solid.svg
+
+  palette:
+    # System palette
+    - media: "(prefers-color-scheme)"
+      primary: red
+      accent: pink
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Light palette
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Dark palette
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  features:
+    - navigation.expand
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - navigation.sections
+    - search.share
+    - search.suggest
+    - toc.integrate
+    - toc.follow
+
+plugins:
+  - offline
+  - privacy
+  - search
+
+nav:
+  - Home: README.md
+  - Release Engineering: RELENG.md
+  - Changelog: CHANGELOG.md
+
+extra:
+  generator: false
