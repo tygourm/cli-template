@@ -1,5 +1,3 @@
-[![CI](https://github.com/tygourm/cli-template/actions/workflows/ci.yml/badge.svg)](https://github.com/tygourm/cli-template/actions/workflows/ci.yml)
-
 # cli-template
 
 Yet another template.
@@ -45,22 +43,33 @@ code coverage.
 pytest
 ```
 
+### App
+
+```bash
+# Run app
+uv run src/main.py # Fail
+uv run src/main.py --help
+
+# Hello command
+uv run src/main.py hello # Hello, World!
+uv run src/main.py hello tygourm # Hello, tygourm!
+
+# Goodbye command
+uv run src/main.py goodbye # Goodbye, World!
+uv run src/main.py goodbye tygourm # Goodbye, tygourm!
+```
+
 ### CLI
 
 ```bash
 # Run CLI
-uv run src/main.py
+cli-template # Fail
+cli-template --help
 
-# Help
---help
-
-# Hello command
-hello # Hello, World!
-hello tygourm # Hello, tygourm!
-
-# Goodbye command
-goodbye # Goodbye, World!
-goodbye tygourm # Goodbye, tygourm!
+# Install completion
+cli-template --install-completion
+source ~/.bashrc
+cli-template [TAB][TAB]
 ```
 
 ### Docker
@@ -70,10 +79,12 @@ goodbye tygourm # Goodbye, tygourm!
 docker build -t cli-template .
 
 # Run container
-docker run -it cli-template
+docker run -it --rm cli-template /bin/bash
 
-# Inspect container
-docker run -it cli-template /bin/bash
+# Install completion
+cli-template --install-completion
+source ~/.bashrc
+cli-template [TAB][TAB]
 ```
 
 ### Docs

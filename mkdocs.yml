@@ -43,19 +43,16 @@ theme:
         name: Switch to system preference
 
   features:
-    - navigation.expand
+    - content.code.copy
     - navigation.footer
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.prune
-    - navigation.tabs
     - navigation.top
     - navigation.tracking
-    - navigation.sections
     - search.share
     - search.suggest
-    - toc.integrate
     - toc.follow
 
 plugins:
@@ -67,6 +64,3 @@ nav:
   - Home: README.md
   - Release Engineering: RELENG.md
   - Changelog: CHANGELOG.md
-
-extra:
-  generator: false

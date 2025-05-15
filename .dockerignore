@@ -10,6 +10,7 @@ CHANGELOG.md
 Dockerfile
 README.md
 RELENG.md
+dist/
 docs/
 htmlcov/
 mkdocs.yml
