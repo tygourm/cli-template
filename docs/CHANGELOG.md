@@ -8,11 +8,11 @@ The format is based on
 this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.1] - 2025-05-15
 
 ### Added
 
-- 🧑‍💻 Add completion
-- 📝 Add MkDocs
-- 🚀 Add Docker
-- 🎉 Probably last commit
+- [#4](https://github.com/tygourm/cli-template/pull/4) 🧑‍💻 Add completion
+- [#3](https://github.com/tygourm/cli-template/pull/3) 📝 Add MkDocs
+- [#2](https://github.com/tygourm/cli-template/pull/2) 🚀 Add Docker
+- [#1](https://github.com/tygourm/cli-template/pull/1) 🎉 Probably last commit
