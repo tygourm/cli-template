@@ -3,6 +3,7 @@ FROM python:3.13-slim-bookworm
 # Setup
 WORKDIR /app
 RUN pip install uv
+ENV UV_SYSTEM_PYTHON=1
 
 # Install dependencies
 COPY uv.lock .
@@ -12,5 +13,5 @@ RUN uv sync --locked --compile-bytecode
 # Copy sources
 COPY . .
 
-# Run CLI
-CMD [ "uv", "run", "src/main.py" ]
+# Build
+RUN uv pip install .

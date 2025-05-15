@@ -12,6 +12,7 @@ this project adheres to
 
 ### Added
 
+- 🧑‍💻 Add completion
 - 📝 Add MkDocs
 - 🚀 Add Docker
 - 🎉 Probably last commit
