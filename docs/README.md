@@ -4,13 +4,13 @@ Yet another template.
 
 ## Prerequisites
 
-This project uses [uv](https://docs.astral.sh/uv) as a package
-and project manager.
+This project uses [uv](https://docs.astral.sh/uv) as a Python
+package and project manager.
 
 ## Setup
 
 ```bash
-uv sync --frozen --all-groups
+uv sync --all-groups --frozen
 ```
 
 This command will create a virtual environment and install the
@@ -21,17 +21,32 @@ environment before continuing.
 source .venv/bin/activate
 ```
 
+!!! note
+
+    - If dependencies are not recognized in VS Code, you can run
+    the command `Ctrl + Shift + P > Python: Select Interpreter`
+    and select `.venv/bin/python`.
+    - After updating the dependencies, you can run the command
+    `Ctrl + Shift + P > Developer: Reload Window` to refresh the
+    development environment.
+
 ## Usage
 
 ### Lint / Format
 
-This project uses [Ruff](https://docs.astral.sh/ruff) as a linter
-and code formatter.
+This project uses [Ruff](https://docs.astral.sh/ruff) as a Python
+linter and code formatter.
 
 ```bash
 ruff check --no-cache # Lint
 ruff format --no-cache # Format
 ```
+
+!!! note
+
+    The `--no-cache` option prevents Ruff from using the cache,
+    which make the results more reliable. This is recommended for
+    developement but not mandatory, the CI will use it anyway.
 
 ### Test
 
@@ -40,8 +55,15 @@ testing and [pytest-cov](https://pypi.org/project/pytest-cov) for
 code coverage.
 
 ```bash
-pytest
+pytest -p no:cacheprovider
 ```
+
+!!! note
+
+    The `-p no:cacheprovider` option prevents pytest from using
+    the cache, which make the results more reliable. This is
+    recommended for developement but not mandatory, the CI will
+    use it anyway.
 
 ### App
 
@@ -49,11 +71,15 @@ pytest
 # Run app
 uv run src/main.py # Fail
 uv run src/main.py --help
+```
 
+```bash
 # Hello command
 uv run src/main.py hello # Hello, World!
 uv run src/main.py hello tygourm # Hello, tygourm!
+```
 
+```bash
 # Goodbye command
 uv run src/main.py goodbye # Goodbye, World!
 uv run src/main.py goodbye tygourm # Goodbye, tygourm!
@@ -65,11 +91,18 @@ uv run src/main.py goodbye tygourm # Goodbye, tygourm!
 # Run CLI
 cli-template # Fail
 cli-template --help
+```
 
+```bash
 # Install completion
 cli-template --install-completion
 source ~/.bashrc
-cli-template [TAB][TAB]
+```
+
+```bash
+# Use completion
+cli [TAB] # ✨ cli-template
+cli-template [TAB][TAB] # ✨ goodbye  hello
 ```
 
 ### Docker
@@ -77,25 +110,40 @@ cli-template [TAB][TAB]
 ```bash
 # Build image
 docker build -t cli-template .
+```
 
+```bash
 # Run container
-docker run -it --rm cli-template /bin/bash
+docker run -it --rm cli-template
+```
 
+!!! note
+
+    The `--rm` automatically remove the container and its
+    associated anonymous volumes when it exits.
+
+You can install and use completion inside the running container.
+
+```bash
 # Install completion
 cli-template --install-completion
 source ~/.bashrc
-cli-template [TAB][TAB]
+```
+
+```bash
+# Use completion
+cli [TAB] # ✨ cli-template
+cli-template [TAB][TAB] # ✨ goodbye  hello
 ```
 
 ### Docs
 
 ```bash
-# Create docs
-mkdocs new .
-
 # Serve docs
 mkdocs serve
+```
 
+```bash
 # Build docs
 mkdocs build
 ```

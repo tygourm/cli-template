@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen --group lint
       - name: Lint with Ruff
-        run: uv run ruff check
+        run: uv run ruff check --no-cache
 
   test:
     runs-on: ubuntu-latest
@@ -50,4 +50,4 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen --group test
       - name: Test with pytest
-        run: uv run pytest
+        run: uv run pytest -p no:cacheprovider
