@@ -6,21 +6,21 @@ build-backend = "hatchling.build"
 name = "cli-template"
 version = "0.0.1"
 requires-python = ">=3.13"
-dependencies = ["typer>=0.15.4"]
+dependencies = ["pydantic-settings", "typer"]
 
 [project.scripts]
-cli-template = "src.main:app"
+cli-template = "main:app"
 
 [dependency-groups]
-docs = ["mkdocs-material>=9.6.14"]
+docs = ["mkdocs-material"]
 lint = ["ruff==0.11.2"]
-test = ["pytest>=8.3.5", "pytest-cov>=6.1.1"]
+test = ["pytest", "pytest-cov"]
 
 [tool.hatch.build]
-include = ["src/**/*.py"]
+include = ["main.py", "src/**/*.py"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["."]
 testpaths = ["test"]
 addopts = ["--cov=src", "--cov-report=html", "--cov-report=term"]
 
@@ -37,6 +37,7 @@ select = ["ALL"]
 ignore = [
     "COM812", # missing-trailing-comma
     "D100",   # undocumented-public-module
+    "D101",   # undocumented-public-class
     "D203",   # incorrect-blank-line-before-class
     "D213",   # multi-line-summary-second-line
     "INP001", # implicit-namespace-package
