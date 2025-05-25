@@ -2,7 +2,9 @@ from typing import Annotated
 
 import typer
 
-app = typer.Typer()
+from src.core.settings import settings
+
+app = typer.Typer(help=f"cli-template {settings.VERSION}")
 
 
 @app.command()

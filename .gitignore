@@ -1,9 +1,10 @@
 .cache/
 .coverage
+.dockerignore
+.gitignore
 .pytest_cache/
 .ruff_cache/
 .venv/
-dist/
+__pycache__/
 htmlcov/
 site/
-__pycache__/

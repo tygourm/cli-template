@@ -69,20 +69,20 @@ pytest -p no:cacheprovider
 
 ```bash
 # Run app
-uv run src/main.py # Fail
-uv run src/main.py --help
+uv run main.py # Fail
+uv run main.py --help
 ```
 
 ```bash
 # Hello command
-uv run src/main.py hello # Hello, World!
-uv run src/main.py hello tygourm # Hello, tygourm!
+uv run main.py hello # Hello, World!
+uv run main.py hello tygourm # Hello, tygourm!
 ```
 
 ```bash
 # Goodbye command
-uv run src/main.py goodbye # Goodbye, World!
-uv run src/main.py goodbye tygourm # Goodbye, tygourm!
+uv run main.py goodbye # Goodbye, World!
+uv run main.py goodbye tygourm # Goodbye, tygourm!
 ```
 
 ### CLI

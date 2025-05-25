@@ -12,6 +12,7 @@ this project adheres to
 
 ### Changed
 
+- 🚀 Improve Docker
 - 📝 Improve docs
 
 ## [0.0.1] - 2025-05-15

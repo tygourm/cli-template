@@ -1,20 +1,44 @@
-FROM python:3.13-slim-bookworm
+ARG BASE_IMAGE=python:3.13-slim-bookworm
+ARG GROUP=cli-group
+ARG USER=cli-user
+
+
+### Build stage ###
+FROM $BASE_IMAGE AS builder
 
 # Setup
-WORKDIR /app
 RUN pip install uv
-ENV UV_SYSTEM_PYTHON=1
+WORKDIR /app
 
-# Dependencies
+# Requirements
 COPY uv.lock .
 COPY pyproject.toml .
-RUN uv sync --locked --compile-bytecode
+RUN uv pip compile pyproject.toml -o requirements.txt
 
-# Sources
-COPY . .
+# Dependencies
+RUN pip install build && pip wheel --wheel-dir /wheels -r requirements.txt
 
 # Build
-RUN uv pip install .
+COPY . .
+RUN python -m build --wheel -o /wheels
+
+
+### Run stage ###
+FROM $BASE_IMAGE
+ARG GROUP
+ARG USER
+
+# Setup
+ENV PIP_NO_CACHE_DIR=1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+RUN groupadd $GROUP && useradd -g $GROUP -m -u 1000 $USER
+WORKDIR /home/$USER
+
+# Dependencies
+COPY --from=builder /wheels /wheels
+RUN pip install /wheels/*.whl && rm -rf /wheels
 
 # Run
+USER $USER
 CMD ["/bin/bash"]
