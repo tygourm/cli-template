@@ -5,13 +5,16 @@ WORKDIR /app
 RUN pip install uv
 ENV UV_SYSTEM_PYTHON=1
 
-# Install dependencies
+# Dependencies
 COPY uv.lock .
 COPY pyproject.toml .
 RUN uv sync --locked --compile-bytecode
 
-# Copy sources
+# Sources
 COPY . .
 
 # Build
 RUN uv pip install .
+
+# Run
+CMD ["/bin/bash"]
