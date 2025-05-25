@@ -8,12 +8,12 @@ The format is based on
 this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.2] - 2025-05-25
 
 ### Changed
 
-- 🚀 Improve Docker
-- 📝 Improve docs
+- [#6](https://github.com/tygourm/cli-template/pull/6) 🚀 Improve Docker
+- [#5](https://github.com/tygourm/cli-template/pull/5) 📝 Improve docs
 
 ## [0.0.1] - 2025-05-15
 
