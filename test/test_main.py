@@ -7,7 +7,7 @@ def test_app_requires_command(cli_runner: CliRunner) -> None:
     """Test that the app requires a command."""
     result = cli_runner.invoke(app)
     assert result.exit_code == 2
-    assert "Missing command." in result.stdout
+    assert "Missing command." in result.stderr
 
 
 def test_app_has_help_option(cli_runner: CliRunner) -> None:

@@ -8,6 +8,12 @@ The format is based on
 this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- ⬆️ Upgrade dependencies
+
 ## [0.0.2] - 2025-05-25
 
 ### Changed
