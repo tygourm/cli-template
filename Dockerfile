@@ -33,7 +33,7 @@ ENV PIP_NO_CACHE_DIR=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 RUN groupadd $GROUP && useradd -g $GROUP -m -u 1000 $USER
-WORKDIR /home/$USER
+WORKDIR /home/$USER/app
 
 # Dependencies
 COPY --from=builder /wheels /wheels
