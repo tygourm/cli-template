@@ -14,7 +14,7 @@ def test_app_has_help_option(cli_runner: CliRunner) -> None:
     """Test that the app has a help option."""
     result = cli_runner.invoke(app, ["--help"])
     assert result.exit_code == 0
-    assert "cli-template 0.0.3" in result.stdout
+    assert "cli-template 0.0.4" in result.stdout
 
 
 def test_hello_command(cli_runner: CliRunner) -> None:

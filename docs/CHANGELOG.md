@@ -8,11 +8,11 @@ The format is based on
 this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.4] - 2025-06-09
 
 ### Changed
 
-- 📝 Update docs
+- [#8](https://github.com/tygourm/cli-template/pull/8) 📝 Update docs
 
 ## [0.0.3] - 2025-06-08
 
