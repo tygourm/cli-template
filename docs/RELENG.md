@@ -1,4 +1,4 @@
-# 🔖 Release Engineering
+# Release Engineering
 
 This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -13,7 +13,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 Additional labels for pre-release and build metadata are
 available as extensions to the MAJOR.MINOR.PATCH format.
 
-## 🚀 Release
+## Release
 
 From `develop` branch:
 
@@ -27,7 +27,7 @@ From `develop` branch:
   branch with a tag, and the content of the changelog
 - Merge branch into `master` and `develop`
 
-## 🚑️ Hotfix
+## Hotfix
 
 From `master` branch:
 
