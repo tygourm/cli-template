@@ -1,9 +1,5 @@
 site_name: cli-template
-site_url: http://127.0.0.1:8000
 site_description: Yet another template.
-
-repo_name: tygourm/cli-template
-repo_url: https://github.com/tygourm/cli-template
 
 theme:
   name: material
@@ -11,10 +7,10 @@ theme:
   features:
     - content.code.copy
     - navigation.footer
+    - navigation.indexes
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
-    - navigation.prune
     - navigation.top
     - navigation.tracking
     - search.share
@@ -51,15 +47,18 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+repo_name: tygourm/cli-template
+repo_url: https://github.com/tygourm/cli-template
+
 plugins:
   - offline
   - privacy
   - search
 
-markdown_extensions:
-  - admonition
-
 nav:
   - Home: README.md
   - Changelog: CHANGELOG.md
   - Release Engineering: RELENG.md
+
+markdown_extensions:
+  - admonition

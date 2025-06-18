@@ -1,6 +1,8 @@
 .cache/
 .coverage
 .dockerignore
+.git/
+.github/
 .gitignore
 .pytest_cache/
 .ruff_cache/
@@ -9,6 +11,7 @@
 Dockerfile
 README.md
 __pycache__/
+cli-template.log
 docs/
 htmlcov/
 mkdocs.yml
