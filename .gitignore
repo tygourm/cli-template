@@ -1,10 +1,9 @@
 .cache/
 .coverage
-.dockerignore
-.gitignore
 .pytest_cache/
 .ruff_cache/
 .venv/
 __pycache__/
+cli-template.log
 htmlcov/
 site/

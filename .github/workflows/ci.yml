@@ -7,47 +7,32 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
         with:
           python-version-file: pyproject.toml
-      - name: Install dependencies
-        run: uv sync --frozen --group docs
-      - name: Docs with MkDocs
-        run: uv run mkdocs build
+      - run: uv sync --frozen --group docs
+      - run: uv run mkdocs build
 
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
         with:
           python-version-file: pyproject.toml
-      - name: Install dependencies
-        run: uv sync --frozen --group lint
-      - name: Lint with Ruff
-        run: uv run ruff check --no-cache
+      - run: uv sync --frozen --group lint
+      - run: uv run ruff check --no-cache
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
         with:
           python-version-file: pyproject.toml
-      - name: Install dependencies
-        run: uv sync --frozen --group test
-      - name: Test with pytest
-        run: uv run pytest -p no:cacheprovider
+      - run: uv sync --frozen --group test
+      - run: uv run pytest -p no:cacheprovider
