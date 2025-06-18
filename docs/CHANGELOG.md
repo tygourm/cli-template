@@ -6,9 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.5] - 2025-06-18
 
-- 🎨 Global improvements
+### Changed
+
+- [#9](https://github.com/tygourm/cli-template/pull/9) 🎨 Global improvements
 
 ## [0.0.4] - 2025-06-09
 
