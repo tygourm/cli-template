@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cli-template"
+version = "1.0.0"
+requires-python = ">=3.13"
+dependencies = ["pydantic-settings", "typer"]
+
+[project.scripts]
+cli-template = "main:app"
+
+[dependency-groups]
+docs = ["mkdocs-material"]
+lint = ["ruff==0.12.0"]
+test = ["pytest", "pytest-cov"]
+
+[tool.hatch.build]
+include = ["main.py", "src/**/*.py"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["test"]
+addopts = ["--cov=main", "--cov=src", "--cov-report=html", "--cov-report=term"]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812", # missing-trailing-comma
+    "D100",   # undocumented-public-module
+    "D101",   # undocumented-public-class
+    "D203",   # incorrect-blank-line-before-class
+    "D213",   # multi-line-summary-second-line
+    "INP001", # implicit-namespace-package
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*test*.py" = [
+    "PLR2004", # magic-value-comparison
+    "S101",    # assert
+]

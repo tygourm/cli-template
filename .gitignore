@@ -1,0 +1,9 @@
+.cache/
+.coverage
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+*.log
+htmlcov/
+site/
