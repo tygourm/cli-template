@@ -2,10 +2,9 @@ from typing import Annotated
 
 import typer
 
-from src.cli_template.logger import get_logger
+from src.cli_template.logger import logger
 from src.cli_template.settings import settings
 
-logger = get_logger("main")  # Usually __name__
 app = typer.Typer(help=f"cli-template {settings.version}")
 
 

@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=python:3.13-slim-bookworm
-ARG GROUP=cli-group
-ARG USER=cli-user
+ARG USER=cli-template
+ARG GROUP=cli-template
 
 
 ### Install stage ###
@@ -11,8 +11,9 @@ WORKDIR /app
 
 COPY uv.lock .
 COPY pyproject.toml .
+
 RUN uv export -o requirements.txt --no-emit-package cli-template && \
-    pip wheel -r requirements.txt -w /wheels
+    pip wheel -r requirements.txt -w /wheels --no-cache-dir --no-deps
 
 
 ### Build stage ###
@@ -22,7 +23,8 @@ RUN pip install build hatchling
 WORKDIR /app
 
 COPY . .
-RUN python -m build -n -o /wheels --wheel
+
+RUN python -m build -w -nx -o /wheels
 
 
 ### Run stage ###
@@ -31,7 +33,7 @@ ARG GROUP
 ARG USER
 
 RUN groupadd $GROUP && \
-    useradd -g $GROUP -u 1000 -m $USER
+    useradd -m -g $GROUP -u 1000 $USER
 WORKDIR /home/$USER/app
 
 COPY --from=installer /wheels /wheels
