@@ -10,6 +10,7 @@ and this project adheres to
 
 ### Changed
 
+- 🔧 Update docs configuration
 - 🎨 Small improvements
 
 ## [1.0.0] - 2025-06-25
